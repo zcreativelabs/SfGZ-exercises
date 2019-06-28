@@ -1,7 +1,7 @@
 {
-  "name": "2-d3-shapes-basic",
+  "name": "4-d3-shapes-with-data",
   "version": "1.0.0",
-  "description": "Learn how to render basic shapes with d3",
+  "description": "Learn how to render data-driven shapes with d3",
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",

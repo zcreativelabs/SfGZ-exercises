@@ -31,6 +31,31 @@ Render out the following shapes using `append`:
 - `<line x0="0" y0="0" x1="100" y1="20" />`
 - `<text x="20" y="30" />`
 
+### Hints
+
+The basic structure provided for this project already takes care of some things for you.
+
+```js
+// ⏱️ 1. Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", () => {
+  
+  // 📏 Define the width and height of your visualization
+  const width = 800
+  const height = 400
+
+  // 👌 Grab the container
+  const container = d3.select("#viz")
+
+  // ➕ Append an svg node and confiture its width and height
+  const svg = container.append("svg")
+    .attr("width", width)
+    .attr("height", height)
+
+  // Render your shapes here...
+
+})
+```
+
 ### Notes
 
-If this is too easy for you, try to style your shapes with d3. You can add attributes to the individual elements using the `.attr()` method.
+If this is too easy for you, try to style your shapes with d3. You can add attributes to the individual elements using the `.attr()` method. Styling is also possible via the `.style()` method.

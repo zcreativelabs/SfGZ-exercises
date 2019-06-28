@@ -1,7 +1,7 @@
 {
-  "name": "2-d3-shapes-basic",
+  "name": "6-make-a-map",
   "version": "1.0.0",
-  "description": "Learn how to render basic shapes with d3",
+  "description": "Learn how to make a world map with d3 and d3-geo",
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
