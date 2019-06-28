@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const height = 400
 
   // Grab the container
-  const container = d3.select("viz")
+  const container = d3.select("#viz")
 
   // Append an svg node and confiture its width and height
   const svg = container.append("svg")

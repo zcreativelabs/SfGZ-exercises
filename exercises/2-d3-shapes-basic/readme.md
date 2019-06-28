@@ -8,7 +8,7 @@ D3 is a powerful tool that can handle data transformation, data binding, and vis
 To get started with this exercise clone this repo, and navigate into the `/exercises/2-d3-shapes-basic` directory.
 
 ```bash
-git clone git...
+git clone git@github.com:zcreativelabs/SfGZ-exercises.git
 cd SfGZ-exercises/exercises/2-d3-shapes-basic
 ```
 
