@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // geographic data (geojson)
   d3.json("/world-110m.json").then(world => {
     // cities data (csv)
-    d3.csv("/cities-2.csv").then(cities => {
+    d3.csv("/cities.csv").then(cities => {
 
       // array of countries is in `world.features`
       // array of cities is in `cities`
