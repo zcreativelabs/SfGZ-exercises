@@ -26,10 +26,10 @@ The main file of interest for you is the `visualization.js` file. Each example h
 
 Render out the following shapes using `append`:
 
-- `<circle cx="10" cy="10" r="15" />`
-- `<rect x="100" y="45" width="40" height="30" />`
-- `<line x0="0" y0="0" x1="100" y1="20" />`
-- `<text x="20" y="30" />`
+- `<circle cx="400" cy="200" r="15" />`
+- `<rect x="200" y="145" width="40" height="30" />`
+- `<line x1="100" y1="100" x2="700" y2="300" stroke="#000" />`
+- `<text x="50" y="50" />`
 
 ### Hints
 
@@ -54,6 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render your shapes here...
 
 })
+```
+
+To append an svg element you can use the `append` method.
+
+```js
+const circle = svg.append("circle")
+  .attr("cx", 100)
+  .attr("cy", 100)
+  .attr("r", 20)
+
 ```
 
 ### Notes
