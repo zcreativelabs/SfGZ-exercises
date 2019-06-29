@@ -1,18 +1,18 @@
 
-# Rendering advanced shapes with d3
+# Komplexe Formen mit d3
 
-Try rendering a `<path />` with d3 by passing the formatted string to the ‘d’ prop. If you are more comfortable in javascript, you can also use the `d3.path()` utility. That way you do not have to write a string of cryptic short-hand characters.
+Versuche einen `<path />` mit d3 zu rendern.
 
-### Getting started
+### Start
 
-To get started with this exercise clone this repo, and navigate into the `/exercises/2-d3-shapes-basic` directory.
+Klone dieses Repo und navigiere zu `/exercises/2-d3-shapes-adsvanced`.
 
 ```bash
 git clone git@github.com:zcreativelabs/SfGZ-exercises.git
 cd SfGZ-exercises/exercises/2-d3-shapes-advanced
 ```
 
-Once in the directory install the dependencies and start the server.
+Installiere die nötigen node modules und starte den Server.
 
 ```bash
 npm install
@@ -20,8 +20,18 @@ npm install
 npm start
 ```
 
-The main file of interest for you is the `visualization.js` file. Each example has a certain amount of boilerplate to help you along.
+Das Hauptdokument ist `visualization.js`.
 
-### Task
+### Aufgabe
 
-Your task in this exercise is to render a `path` shape based on the `shapePath` variable provided.
+Deine Aufgabe  ist es, eine `path`-Form basierend auf der bereitgestellten Variablen `shapePath` zu rendern.
+
+### Hinweise
+
+Um ein svg-Element hinzuzufügen, kann `.append` verwendet werden.
+
+`path` Formen werden durch ein `d` Attribut definiert.
+
+### Weiteres
+
+Wenn diese Aufgabe zu einfach ist, versuche die Formen mit d3 zu gestalten. Dafür kannst du `.attr()` order `.style()` benutzen.

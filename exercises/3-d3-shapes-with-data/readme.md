@@ -3,16 +3,16 @@
 
 Rendering basic shapes and paths can get you a long way, but if you really want to get into data visualization, you have to bring data into the game at some point. In d3 we use data binding to bind an array of data points to DOM elements.
 
-### Getting started
+### Start
 
-To get started with this exercise clone this repo, and navigate into the `/exercises/2-d3-shapes-basic` directory.
+Klone dieses Repo und navigiere zu `/exercises/3-d3-shapes-with-data`.
 
 ```bash
 git clone git@github.com:zcreativelabs/SfGZ-exercises.git
 cd SfGZ-exercises/exercises/3-d3-shapes-with-data
 ```
 
-Once in the directory install the dependencies and start the server.
+Installiere die nötigen node modules und starte den Server.
 
 ```bash
 npm install
@@ -20,32 +20,32 @@ npm install
 npm start
 ```
 
-The main file of interest for you is the `visualization.js` file. Each example has a certain amount of boilerplate to help you along.
+Das Hauptdokument ist `visualization.js`.
 
-### Task
+### Aufgabe
 
-You are provided with an array of shapes. You need to bind this array to the DOM and render out a path for each one of the items in the array.
+Du wirst mit einer Reihe von Formen versorgt. Dieses Array muss an das DOM gebunden werden und ein `path` muss für jedes Element dem svg container hinzugefügt werden.
 
-### Hint
+### Hinweise
 
-In order to bind data to DOM elements, first select the elements you want to target. During the first run, this means selecting non-existent elements and entering them into the DOM.
+Um Daten an DOM-Elemente zu binden, wähle zunächst die Elemente aus. Im ersten Durchlauf bedeutet dies, dass nicht vorhandene Elemente ausgewählt und in das DOM eingetragen werden.
 
 ```js
-// target all elements of type `circle`
+// Alle `circle` Elemente auswählen
 const circles = svg.selectAll("circle")
-  // bind an array of data points
+  // Array an DOM binden
   .data(data)
-  // enter them into the DOM
+  // Alle neuen Elemente eintragen
   .enter()
-  // append a <circle /> node for each one
+  // `<circle />` für jeden Datenpunkt hinzufügen
   .append("circle")
-    // add all the necessary attributes based on the data
+    // Alle nötigen Attribute konfigurieren
     .attr("cx", d => d.x)
     /// ...
 ```
 
-Remember that the `.attr` function runs for each item in the array, and the data for each item is contained in the `d` prop.
+Vergiss nicht, dass die Funktion `.attr` für jedes Element im Array ausgeführt wird und die Daten für jedes Element im `d` prop enthalten sind.
 
-### Notes
+### Weiteres
 
-If this is too easy for you, try styling the shapes, using either `.attr` or `.style`.
+Wenn dir das zu einfach ist, versuche, die Formen zu gestalten, entweder mit `.attr` oder `style`.

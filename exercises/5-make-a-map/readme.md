@@ -1,18 +1,18 @@
 
-# Render a map with d3
+# d3 Karte
 
-In order to make a map, you will need a geojson file. You previously used a very small geojson dataset that fit into a variable. Now it's time to step up your game and load in a file using `d3.json`.
+Um eine Karte zu erstellen, benötigen wir eine Geojson-Datei. Zuvor hast du mit einem sehr kleinen Geojson-Datensatz gearbeitet, der in eine Variable passt. Jetzt ist es an der Zeit eine Datei mit `d3.json` zu laden.
 
-### Getting started
+### Start
 
-To get started with this exercise clone this repo, and navigate into the `/exercises/2-d3-shapes-basic` directory.
+Klone dieses Repo und navigiere zu `/exercises/5-make-a-map`.
 
 ```bash
 git clone git@github.com:zcreativelabs/SfGZ-exercises.git
 cd SfGZ-exercises/exercises/5-make-a-map
 ```
 
-Once in the directory install the dependencies and start the server.
+Installiere die nötigen node modules und starte den Server.
 
 ```bash
 npm install
@@ -20,51 +20,50 @@ npm install
 npm start
 ```
 
-The main file of interest for you is the `visualization.js` file. Each example has a certain amount of boilerplate to help you along.
+Das Hauptdokument ist `visualization.js`.
 
-### Task
+### Aufgabe
 
-Use the provided `geojson` and `cities` data loaded asynchronously via `d3.json` and `d3.csv` to render out all countries of the world and the 30 biggest cities in the world.
+Verwende die bereitgestellten `geojson` und `cities` Daten, die asynchron über `d3.json` und `d3.csv` geladen werden, um alle Länder der Welt zusammen mit den 30 größten Städtem der Welt anzuzeigen.
 
-### Hints
+### Hinweise
 
-You have to bind two datasets ih this exercise. The first dataset is bound to `paths` and the second one is bound to `circles`.
+In dieser Übung musst du zwei Datensätze an das DOM binden. Der erste Datensatz wird an eine Serie von `path` Elementen gebunden, der zweite wird an eine Serie von `circle` Elementen gebunden.
 
 ```js
 d3.json("/path/to/your/file.json")
   //
-  // ⏱️ wait until javascript loads your data
+  // ⏱️ Warte bis Javascript deine Daten lädt.
   //
   .then(function(world) {
-    // 🌍 `world` is your geojson variable
+    // 🌍 `world` ist deine geojson Variabel
 
-    // 📏 Define the width and height of your svg node
+    // 📏 Breite und Höhe der Visualisierung definieren
     const width = 800
     const height = 400
 
-    // 👌 Select the svg node and configure the width and height
-    const svg = d3.select("svg")
+    // 👌 Container auswählen
+    const container = d3.select("#viz")
+
+    // SVG node an den container hängen und Breite/Höhe konfigurieren
+    const svg = container.append("svg")
       .attr("width", width)
       .attr("height", height)
     
-    // 🌐 Create a new projection
+    // 🌐 Neue Projektion generieren.
     const projection = d3.geoEqualEarth()
-      // 🎯 Place the projection in the center of the svg node
+      // 🎯 Projektion in die Mitte verschieben
       .translate([width/2, height/2])
-      // You can further customize your projection here...
     
-    // 🛠️ Create a path constructor based on the
-    // projection you created
+    // 🛠️ Pfadgenerator definieren
     const path = d3.geoPath().projection(projection)
 
-    // ⛓️ Bind the world data to the DOM and render
-    // out all the countries as paths using the
-    // path constructor
+    // ⛓️ welt Daten an das DOM binden.
     const countries = svg.selectAll("path")
-      .data(world)
+      .data(world.features)
       .enter()
       .append("path")
-        .attr("d", path)
+        .attr("d", d => path(d))
     
     // 🎉 TADA! ;)
 
@@ -72,6 +71,6 @@ d3.json("/path/to/your/file.json")
 
 ```
 
-### Notes
+### Weiteres
 
-If this exercise is too easy for you, try tweaking the map projection to look nicer (experiment with `rotate` or `center`, or `scale`). Try to style the circles and the countries. You can also use the provided `styles.css` file to get the job done. Remember, svg is also part fo the DOM and therefore accessible to css for styling.
+Falls diese Übung zu einfach ist, versuche die Kartenprojektion so zu optimieren, dass sie schöner aussieht (experiementiere mit `rotate` oder `center` oder `scale`). Versuche die Kreise und Länder zu gestalten.
