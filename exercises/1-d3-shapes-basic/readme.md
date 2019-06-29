@@ -9,7 +9,7 @@ To get started with this exercise clone this repo, and navigate into the `/exerc
 
 ```bash
 git clone git@github.com:zcreativelabs/SfGZ-exercises.git
-cd SfGZ-exercises/exercises/2-d3-shapes-basic
+cd SfGZ-exercises/exercises/1-d3-shapes-basic
 ```
 
 Once in the directory install the dependencies and start the server.
